@@ -17,6 +17,8 @@ RUN apt-get update && \
 COPY src/ ./src/
 COPY tests/ ./tests/
 COPY build_test.sh ./
+COPY input/ ./input/
+COPY output/ ./output/
 
 # Default working directory
 WORKDIR /work/src
