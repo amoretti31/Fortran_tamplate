@@ -10,5 +10,5 @@ program main
 
 
 
-    print *, "Adding", a, "and", b, "gives", c, "ciao"
+    print *, "Adding", a, "and", b, "gives", c, "ciao Mondo"
 end program main
