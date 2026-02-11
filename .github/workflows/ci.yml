@@ -1,29 +1,24 @@
 name: Fortran CI
 
-# Only run when files in src/ or tests/ change
 on:
   push:
-    paths:
-      - 'src/**'
-      - 'tests/**'
+    branches:
+      - main
   pull_request:
-    paths:
-      - 'src/**'
-      - 'tests/**'
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
+      # Step 3a: Checkout the repo
       - uses: actions/checkout@v4
 
-      # Step 2: Build Docker image
+      # Step 3b: Set up Docker (optional if you want to use your Docker image)
       - name: Build Docker Image
         run: docker build -t fortran-template .
 
-      # Step 3: Run build & tests inside Docker
+      # Step 3c: Run build & tests inside Docker
       - name: Run tests inside Docker
         run: |
           docker run --rm -v ${{ github.workspace }}:/work -w /work fortran-template bash build_test.sh
