@@ -15,7 +15,7 @@ program test_math
     end if
 
     ! TEST MULTIPLY FUNCTION
-    if (multiply(2,3) /= 5) then
+    if (multiply(2,3) /= 6) then
         print *, "ERROR: multiply(2,3) failed"
         stop 1
     else
