@@ -1,0 +1,10 @@
+FROM gcc:latest
+
+WORKDIR /work
+COPY . .
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gfortran \
+    && rm -rf /var/lib/apt/lists/*
+
+CMD ["gfortran", "-o", "output", "main.f90", "&&", "./output"]
