@@ -4,21 +4,29 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'Docker/**'
+      - 'src/**'
+      - 'tests/**'
   pull_request:
+    paths:
+      - 'Docker/**'
+      - 'src/**'
+      - 'tests/**'
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 3a: Checkout the repo
+      # Step 1: Checkout the repo
       - uses: actions/checkout@v4
 
-      # Step 3b: Set up Docker (optional if you want to use your Docker image)
+      # Step 2: Build Docker Image
       - name: Build Docker Image
         run: docker build -t fortran-template Docker
 
-      # Step 3c: Run build & tests inside Docker
+      # Step 3: Run build & tests inside Docker
       - name: Run tests inside Docker
         run: |
-          docker run --rm -v ${{ github.workspace }}:/work -w /work fortran-template bash build_test.sh
+          docker run --rm -v "${{ github.workspace }}/Docker":/work -w /work fortran-template bash build_test.sh
