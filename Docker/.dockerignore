@@ -1,0 +1,46 @@
+# Git
+.git
+.gitignore
+
+# Compiled Fortran outputs
+*.o
+*.mod
+*.exe
+*.out
+*.a
+*.so
+
+# Docker build artifacts
+Docker/*.tar
+Docker/*.log
+
+# VS Code and Dev Container files
+.vscode/
+.devcontainer/
+*.code-workspace
+
+# MacOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux system files
+*~
+*.swp
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Python / other scripts caches (if any)
+__pycache__/
+*.pyc
+*.pyo
+
+# Node / npm artifacts (if accidentally added)
+node_modules/
+npm-debug.log
+
+# Logs
+*.log
