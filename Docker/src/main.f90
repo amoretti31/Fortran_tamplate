@@ -8,5 +8,7 @@ program main
     b = 7
     c = add(a, b)
 
-    print *, "Adding", a, "and", b, "gives", c
+
+
+    print *, "Adding", a, "and", b, "gives", c, "ciao"
 end program main
