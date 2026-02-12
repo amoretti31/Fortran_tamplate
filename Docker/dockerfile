@@ -1,27 +1,10 @@
-# Use GCC base image
-FROM gcc:latest
+FROM gcc:14
 
 WORKDIR /work
 
-# Install dependencies
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive \
     apt-get install -y --no-install-recommends \
-    gfortran-14 gfortran-14-x86-64-linux-gnu \
-    libgfortran5 libgfortran-14-dev \
-    python3 python3-pip cmake make git && \
+    cmake make git python3 && \
     rm -rf /var/lib/apt/lists/*
 
-
-# Copy project code (src and tests)
-COPY src/ ./src/
-COPY tests/ ./tests/
-COPY build_test.sh ./
-COPY input/ ./input/
-COPY output/ ./output/
-
-# Default working directory
-WORKDIR /work/src
-
-# Start with an interactive bash if run without args
 CMD ["/bin/bash"]

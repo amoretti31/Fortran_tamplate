@@ -26,7 +26,11 @@ jobs:
       - name: Build Docker Image
         run: docker build -t fortran-template Docker
 
-      # Step 3: Run build & tests inside Docker
       - name: Run tests inside Docker
         run: |
-          docker run --rm -v "${{ github.workspace }}/Docker":/work -w /work fortran-template bash build_test.sh
+          docker run --rm \
+          -v "${{ github.workspace }}":/work \
+          -w /work \
+          fortran-template \
+          bash Docker/build_test.sh
+      

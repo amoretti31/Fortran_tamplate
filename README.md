@@ -7,4 +7,4 @@ docker build -t fortran-template Docker
 docker run --rm -v "$PWD/src":/workspace -w /workspace fortran-template gfortran main.f90 -o main
 
 ## Run an interactive shell
-docker run -it --rm -v "$PWD/src":/workspace -w /workspace fortran-template /bin/bash
+docker run -it --rm -v "$PWD":/workspace -w /workspace fortran-template /bin/bash
