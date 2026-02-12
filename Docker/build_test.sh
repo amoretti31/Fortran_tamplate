@@ -19,3 +19,5 @@ echo "Running tests..."
 
 echo "Tests finished successfully"
 
+cd ..
+rm -r build
