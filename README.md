@@ -80,7 +80,6 @@ docker run --rm \
 ---
 ## 🧩 Build a New Module and Test
 
-### 1️⃣ Create a New Module
 
 1. Navigate to the `src/` directory
 
