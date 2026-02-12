@@ -32,5 +32,12 @@ jobs:
           -v "${{ github.workspace }}":/work \
           -w /work \
           fortran-template \
-          bash Docker/build_test.sh
+          bash Docker/build_test.sh > test_output.txt
+    
+          echo "## Test Results" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+          cat test_output.txt >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY
+      
+      
       
