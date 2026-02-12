@@ -16,7 +16,7 @@ A **starter template for modern Fortran projects** with Docker-based CI testing,
 
 ## 📁 Project Structure
 
-```markdown
+
 ```plaintext
 Fortran_tamplate/
 ├── src/          # Source code directory
@@ -27,7 +27,7 @@ Fortran_tamplate/
 ├── .github/workflows/  # GitHub Actions workflows for CI/CD
 ├── .devcontainer/      # Development container configuration files
 ```
-```
+
 
 
 ---
