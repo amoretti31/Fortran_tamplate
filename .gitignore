@@ -1,0 +1,32 @@
+# Compiled Fortran binaries and object files
+*.o
+*.mod
+*.smod
+*.exe
+*.out
+
+# Build directories
+build/
+*.dir/
+*.dSYM/
+
+
+
+# Docker files (optional if you don't want to commit temporary images)
+Docker/*.tar
+
+# Editor backups and temporary files
+*~
+*.swp
+*.swo
+*.bak
+.idea/
+.vscode/
+.DS_Store
+
+# GitHub Actions caches (optional)
+.cache/
+
+# PDF and png files (if you don't want to commit documentation or images)
+*.pdf
+*.png
